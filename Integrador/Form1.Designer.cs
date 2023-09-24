@@ -40,16 +40,18 @@
             labelOperando2 = new Label();
             textBoxResultado = new TextBox();
             groupBox1 = new GroupBox();
-            radioBinarioChecked = new RadioButton();
             rdbDecimalChecked = new RadioButton();
+            radioBinarioChecked = new RadioButton();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // buttonOperar
             // 
+            buttonOperar.Cursor = Cursors.Hand;
+            buttonOperar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonOperar.Location = new Point(33, 381);
             buttonOperar.Name = "buttonOperar";
-            buttonOperar.Size = new Size(212, 36);
+            buttonOperar.Size = new Size(212, 44);
             buttonOperar.TabIndex = 0;
             buttonOperar.Text = "Operar";
             buttonOperar.UseVisualStyleBackColor = true;
@@ -57,9 +59,11 @@
             // 
             // buttonLimpiar
             // 
-            buttonLimpiar.Location = new Point(273, 381);
+            buttonLimpiar.Cursor = Cursors.Hand;
+            buttonLimpiar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonLimpiar.Location = new Point(284, 381);
             buttonLimpiar.Name = "buttonLimpiar";
-            buttonLimpiar.Size = new Size(236, 36);
+            buttonLimpiar.Size = new Size(236, 44);
             buttonLimpiar.TabIndex = 1;
             buttonLimpiar.Text = "Limpiar";
             buttonLimpiar.UseVisualStyleBackColor = true;
@@ -67,9 +71,11 @@
             // 
             // buttonCerrar
             // 
+            buttonCerrar.Cursor = Cursors.Hand;
+            buttonCerrar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCerrar.Location = new Point(564, 381);
             buttonCerrar.Name = "buttonCerrar";
-            buttonCerrar.Size = new Size(212, 36);
+            buttonCerrar.Size = new Size(212, 44);
             buttonCerrar.TabIndex = 2;
             buttonCerrar.Text = "Cerrar";
             buttonCerrar.UseVisualStyleBackColor = true;
@@ -78,105 +84,115 @@
             // Resultado
             // 
             Resultado.AutoSize = true;
-            Resultado.Font = new Font("Segoe UI", 28F, FontStyle.Regular, GraphicsUnit.Point);
-            Resultado.Location = new Point(33, 59);
+            Resultado.Font = new Font("Segoe UI", 32F, FontStyle.Regular, GraphicsUnit.Point);
+            Resultado.Location = new Point(33, 71);
             Resultado.Name = "Resultado";
-            Resultado.Size = new Size(195, 51);
+            Resultado.Size = new Size(220, 59);
             Resultado.TabIndex = 3;
             Resultado.Text = "Resultado:";
             // 
             // comboBoxOperator
             // 
             comboBoxOperator.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxOperator.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxOperator.FormattingEnabled = true;
             comboBoxOperator.ImeMode = ImeMode.On;
-            comboBoxOperator.Location = new Point(314, 317);
+            comboBoxOperator.Location = new Point(326, 317);
             comboBoxOperator.Name = "comboBoxOperator";
-            comboBoxOperator.Size = new Size(157, 23);
+            comboBoxOperator.Size = new Size(157, 40);
             comboBoxOperator.TabIndex = 4;
             // 
             // textPrimerOperador
             // 
+            textPrimerOperador.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             textPrimerOperador.Location = new Point(33, 317);
             textPrimerOperador.Name = "textPrimerOperador";
-            textPrimerOperador.Size = new Size(212, 23);
+            textPrimerOperador.Size = new Size(212, 39);
             textPrimerOperador.TabIndex = 5;
             // 
             // textSegundoOperador
             // 
+            textSegundoOperador.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             textSegundoOperador.Location = new Point(564, 317);
             textSegundoOperador.Name = "textSegundoOperador";
-            textSegundoOperador.Size = new Size(212, 23);
+            textSegundoOperador.Size = new Size(212, 39);
             textSegundoOperador.TabIndex = 6;
             // 
             // labelPrimerOperador
             // 
             labelPrimerOperador.AutoSize = true;
+            labelPrimerOperador.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labelPrimerOperador.Location = new Point(33, 284);
             labelPrimerOperador.Name = "labelPrimerOperador";
-            labelPrimerOperador.Size = new Size(96, 15);
+            labelPrimerOperador.Size = new Size(155, 25);
             labelPrimerOperador.TabIndex = 7;
             labelPrimerOperador.Text = "Primer operador:";
             // 
             // labelResultado
             // 
             labelResultado.AutoSize = true;
-            labelResultado.Location = new Point(314, 284);
+            labelResultado.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            labelResultado.Location = new Point(326, 284);
             labelResultado.Name = "labelResultado";
-            labelResultado.Size = new Size(57, 15);
+            labelResultado.Size = new Size(93, 25);
             labelResultado.TabIndex = 8;
             labelResultado.Text = "Operador";
             // 
             // labelOperando2
             // 
             labelOperando2.AutoSize = true;
+            labelOperando2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labelOperando2.Location = new Point(564, 284);
             labelOperando2.Name = "labelOperando2";
-            labelOperando2.Size = new Size(108, 15);
+            labelOperando2.Size = new Size(174, 25);
             labelOperando2.TabIndex = 9;
             labelOperando2.Text = "Segundo operador:";
             // 
             // textBoxResultado
             // 
-            textBoxResultado.Location = new Point(262, 84);
+            textBoxResultado.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxResultado.Location = new Point(259, 95);
             textBoxResultado.Name = "textBoxResultado";
-            textBoxResultado.Size = new Size(209, 23);
+            textBoxResultado.Size = new Size(209, 32);
             textBoxResultado.TabIndex = 10;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(rdbDecimalChecked);
             groupBox1.Controls.Add(radioBinarioChecked);
-            groupBox1.Location = new Point(262, 157);
+            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Location = new Point(266, 170);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(202, 110);
+            groupBox1.Size = new Size(202, 80);
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             groupBox1.Text = "Representar resultado en :";
             // 
-            // radioBinarioChecked
-            // 
-            radioBinarioChecked.AutoSize = true;
-            radioBinarioChecked.Location = new Point(117, 37);
-            radioBinarioChecked.Name = "radioBinarioChecked";
-            radioBinarioChecked.Size = new Size(62, 19);
-            radioBinarioChecked.TabIndex = 13;
-            radioBinarioChecked.TabStop = true;
-            radioBinarioChecked.Text = "Binario";
-            radioBinarioChecked.UseVisualStyleBackColor = true;
-            radioBinarioChecked.CheckedChanged += radioBinarioChecked_CheckedChanged;
-            // 
             // rdbDecimalChecked
             // 
             rdbDecimalChecked.AutoSize = true;
+            rdbDecimalChecked.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             rdbDecimalChecked.Location = new Point(6, 37);
             rdbDecimalChecked.Name = "rdbDecimalChecked";
-            rdbDecimalChecked.Size = new Size(68, 19);
+            rdbDecimalChecked.Size = new Size(75, 23);
             rdbDecimalChecked.TabIndex = 12;
             rdbDecimalChecked.TabStop = true;
             rdbDecimalChecked.Text = "Decimal";
             rdbDecimalChecked.UseVisualStyleBackColor = true;
             rdbDecimalChecked.CheckedChanged += rdbDecimalChecked_CheckedChanged;
+            // 
+            // radioBinarioChecked
+            // 
+            radioBinarioChecked.AutoSize = true;
+            radioBinarioChecked.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            radioBinarioChecked.Location = new Point(117, 37);
+            radioBinarioChecked.Name = "radioBinarioChecked";
+            radioBinarioChecked.Size = new Size(69, 23);
+            radioBinarioChecked.TabIndex = 13;
+            radioBinarioChecked.TabStop = true;
+            radioBinarioChecked.Text = "Binario";
+            radioBinarioChecked.UseVisualStyleBackColor = true;
+            radioBinarioChecked.CheckedChanged += radioBinarioChecked_CheckedChanged;
             // 
             // FrmCalculadora
             // 

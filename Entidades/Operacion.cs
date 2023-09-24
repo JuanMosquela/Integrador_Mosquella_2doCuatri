@@ -52,8 +52,11 @@ namespace Entidades
                     resultado = this.primerOperando * this.segundoOperando;
                     break;
                 case '/':
-                    resultado = this.primerOperando / this.segundoOperando;
+                    
+                     resultado = this.primerOperando / this.segundoOperando;
                     break;
+                  
+                    
                 default:
                     resultado = this.primerOperando + this.segundoOperando;
                     break;

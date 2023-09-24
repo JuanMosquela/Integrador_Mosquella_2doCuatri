@@ -9,14 +9,14 @@ namespace Entidades
     public class Numeracion
     {
         private ESistema sistemas;
-        private double valorNumerico;        
+        private double valorNumerico;
 
         public Numeracion(ESistema sistemas, string valorNumerico)
         {
             InicializarValores(sistemas, valorNumerico);
         }
 
-        public Numeracion (ESistema sistemas, double valorNumerico)
+        public Numeracion(ESistema sistemas, double valorNumerico)
         {
             this.sistemas = sistemas;
             this.valorNumerico = valorNumerico;
@@ -32,7 +32,7 @@ namespace Entidades
 
         public ESistema Sistema { get { return sistemas; } }
 
-        public string Valor { get { return this.valorNumerico.ToString(); } }       
+        public string Valor { get { return this.valorNumerico.ToString(); } }
 
         public static string DecimalABinario(int numeroEntero)
         {
@@ -43,7 +43,7 @@ namespace Entidades
 
             if (numeroEntero < 0)
             {
-                throw new ArgumentException("El número entero debe ser mayor o igual a cero.");
+                return "Numero invalido";
             }
 
             string binario = "";
@@ -57,28 +57,30 @@ namespace Entidades
             return binario;
         }
 
-        public static string DecimalABinario(string numeroEntero)
+        public static string DecimalABinario(string valor)
         {
-            int.TryParse(numeroEntero, out int aux);
-            if (aux == 0)
+            if (int.TryParse(valor, out int entero))
             {
-                return "0";
-            }
+                if (entero > 0)
+                {
+                    string binario = "";
 
-            if (aux < 0)
+                    while (entero > 0)
+                    {
+                        binario = entero % 2 + binario;
+                        entero /= 2;
+                    }
+                    return binario;
+                }
+                else
+                {
+                    return "Valor inválido";
+                }
+            }
+            else
             {
-                throw new ArgumentException("El número entero debe ser mayor o igual a cero.");
+                return "Valor inválido";
             }
-
-            string binario = "";
-            while (aux > 0)
-            {
-                double residuo = aux % 2;
-                binario = residuo + binario;
-                aux = aux / 2;
-            }
-
-            return binario;
         }
 
         public static double BinarioADecimal(string numeroBinario)
@@ -111,7 +113,7 @@ namespace Entidades
 
         public string ConvertirA(ESistema valor)
         {
-            return valor == ESistema.Binario ? Numeracion.DecimalABinario(this.Valor) : this.Valor;            
+            return valor == ESistema.Binario ? Numeracion.DecimalABinario(this.Valor) : this.Valor;
         }
 
         public static double operator +(Numeracion primerOperador, Numeracion segundoOperador)
@@ -131,7 +133,7 @@ namespace Entidades
 
         public static double operator /(Numeracion primerOperador, Numeracion segundoOperador)
         {
-            
+
             return double.Parse(primerOperador.ConvertirA(ESistema.Decimal)) / double.Parse(segundoOperador.ConvertirA(ESistema.Decimal));
         }
 
@@ -152,7 +154,7 @@ namespace Entidades
 
         public static bool operator !=(ESistema sistema, Numeracion primerOperador)
         {
-            return !( sistema == primerOperador.Sistema );
+            return !(sistema == primerOperador.Sistema);
         }
 
     }

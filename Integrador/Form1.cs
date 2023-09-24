@@ -18,17 +18,17 @@ namespace Integrador
 
         public void SetResultado(Numeracion resultado)
         {
-            if (resultado is null) return;          
+            if (resultado is null) return;
 
-            string res = resultado.ConvertirA(this.sistema);
-            
-            textBoxResultado.Text = resultado.Valor;
+            string res = resultado.ConvertirA(this.sistema);           
+
+            textBoxResultado.Text = res;
         }
 
 
         private void buttonOperar_Click(object sender, EventArgs e)
         {
-            
+
             if (double.TryParse(textPrimerOperador.Text, out double primerValor) && double.TryParse(textSegundoOperador.Text, out double segundoValor))
             {
                 this.primerOperando = new Numeracion(this.sistema, primerValor);
@@ -44,11 +44,17 @@ namespace Integrador
                     simbol = '+';
                 }
 
+                if (simbol == '/' && double.Parse(this.segundoOperando.Valor) == 0.0)
+                {
+                    MessageBox.Show("No se puede dividir por 0", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 this.calculadora = new Operacion(this.primerOperando, this.segundoOperando);
 
                 this.resultado = calculadora.Operar(simbol);
                 Numeracion aux = new Numeracion(this.sistema, this.resultado.ConvertirA(this.sistema));
-                SetResultado(aux);            
+                SetResultado(aux);
             }
             else
             {
@@ -58,7 +64,7 @@ namespace Integrador
                 }
                 else
                 {
-                    MessageBox.Show("Debes ingresar ambos valores para operar", "Aceptar", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+                    MessageBox.Show("Debes ingresar ambos valores para operar", "Aceptar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -99,7 +105,7 @@ namespace Integrador
         {
             this.sistema = ESistema.Decimal;
 
-            if(this.resultado is not null)
+            if (this.resultado is not null)
             {
                 Numeracion aux = new Numeracion(this.sistema, this.resultado.ConvertirA(this.sistema));
                 SetResultado(aux);
@@ -113,9 +119,6 @@ namespace Integrador
 
             if (this.resultado is not null)
             {
-               
-                
-
                 Numeracion aux = new Numeracion(this.sistema, this.resultado.ConvertirA(this.sistema));
                 SetResultado(aux);
             }
